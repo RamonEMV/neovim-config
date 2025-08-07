@@ -1,5 +1,7 @@
 require("config.lazy")
 
+vim.cmd.colorscheme("cyberdream")
+
 vim.opt.relativenumber = true
 
 -- Move
@@ -30,6 +32,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		vim.lsp.buf.format({ async = false })
 	end,
 })
+
+
+vim.cmd("syntax enable")
+vim.opt.termguicolors = true
 
 -- Diagnostics for error and warning
 vim.diagnostic.config({

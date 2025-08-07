@@ -1,8 +1,11 @@
+-- plugins/cyberdream.lua or inside your Lazy spec
 return {
-  "scottmckendry/cyberdream.nvim",
-  opts = {
-    theme = "auto",
-    priority = 1000,
-    transparent = true,
-  },
+	"scottmckendry/cyberdream.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {
+		theme = "auto",
+		transparent = true,
+		disable_autocmd = true, -- 👈 disables auto-colorscheme
+	},
 }
