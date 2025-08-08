@@ -19,18 +19,22 @@ vim.keymap.set('n', '<leader>gd', ':Gdiffsplit<CR>', { desc = "Git diff split" }
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = "Close delete buffer" })
 vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = "Close tab" })
 
--- Show diagnostic
-vim.keymap.set("n", "<leader>td", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 
 -- List diagnostics in buffer
 vim.keymap.set("n", "<leader>tf", ":Telescope diagnostics<CR>", { desc = "List all diagnostics in buffer" })
 
+
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP: Rename symbol" })
+-- Show diagnostic
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code action" })
+
 -- Format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function()
-		vim.lsp.buf.format({ async = false })
-	end,
+  pattern = "*",
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
 })
 
 
@@ -39,11 +43,11 @@ vim.opt.termguicolors = true
 
 -- Diagnostics for error and warning
 vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
-	update_in_insert = false,
-	severity_sort = true,
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
 })
 
 vim.o.tabstop = 2
