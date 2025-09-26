@@ -2,6 +2,8 @@ require("config.lazy")
 
 vim.cmd.colorscheme("cyberdream")
 
+vim.opt.shell = 'cmd.exe'
+
 vim.opt.relativenumber = true
 
 -- Move
@@ -19,10 +21,8 @@ vim.keymap.set('n', '<leader>gd', ':Gdiffsplit<CR>', { desc = "Git diff split" }
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = "Close delete buffer" })
 vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = "Close tab" })
 
-
 -- List diagnostics in buffer
 vim.keymap.set("n", "<leader>tf", ":Telescope diagnostics<CR>", { desc = "List all diagnostics in buffer" })
-
 
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP: Rename symbol" })
 -- Show diagnostic
