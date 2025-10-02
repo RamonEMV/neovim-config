@@ -11,9 +11,10 @@ return {
       "hrsh7th/cmp-cmdline",
 
       -- Snippet engine & sources
+      -- "hrsh7th/vim-vsnip",
+      -- "hrsh7th/cmp-vsnip",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
-
       -- Autocomplete icons
       "onsails/lspkind.nvim",
     },

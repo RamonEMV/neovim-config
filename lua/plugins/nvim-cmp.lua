@@ -7,7 +7,12 @@ return {
   { "hrsh7th/cmp-cmdline" },
 
   -- Add vsnip support
-  { "hrsh7th/vim-vsnip" },
-  { "hrsh7th/cmp-vsnip" },
+  -- {
+  --   "hrsh7th/vim-vsnip",
+  --   dependencies = { "mlaursen/vim-react-snippets" },
+  --   config = function()
+  --
+  --   end
+  -- },
+  -- { "hrsh7th/cmp-vsnip" },
 }
-
