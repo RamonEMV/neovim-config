@@ -50,9 +50,19 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", {
+  underline = false,
+  fg = "#ff5555", -- red text
+  bg = "#331111", -- subtle red background
+})
+
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", {
+  underline = false,
+  fg = "#ffcc00",
+  bg = "#332b00"
+})
+
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.softtabstop = 2
-
-vim.opt.termguicolors = true
