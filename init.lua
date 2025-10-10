@@ -1,4 +1,5 @@
 require("config.lazy")
+require("utils.keep_tabs").setup()
 
 vim.cmd.colorscheme("cyberdream")
 
@@ -11,6 +12,15 @@ vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
+
+-- Terminal mode window navigation
+vim.keymap.set('t', '<C-h>', '<C-\\><C-n><C-w>h', { silent = true })
+vim.keymap.set('t', '<C-j>', '<C-\\><C-n><C-w>j', { silent = true })
+vim.keymap.set('t', '<C-k>', '<C-\\><C-n><C-w>k', { silent = true })
+vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-w>l', { silent = true })
+
+-- In terminal mode, pressing Esc goes to normal mode
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 
 -- Save shortcut
 vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = "Save file" })
@@ -25,6 +35,11 @@ vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = "Close tab" })
 vim.keymap.set("n", "<leader>tf", ":Telescope diagnostics<CR>", { desc = "List all diagnostics in buffer" })
 
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP: Rename symbol" })
+
+-- Tabs commands
+
+vim.keymap.set("n", "[t", ":tabprev<CR>", { desc = "Previous tab", silent = true })
+vim.keymap.set("n", "]t", ":tabnext<CR>", { desc = "Next tab", silent = true })
 -- Show diagnostic
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code action" })
@@ -66,3 +81,8 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.softtabstop = 2
+
+vim.o.shell = "C:\\Program Files\\Git\\bin\\bash.exe"
+vim.o.shellcmdflag = "-c"
+vim.o.shellquote = '"'
+vim.o.shellxquote = ""
