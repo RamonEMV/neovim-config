@@ -1,13 +1,10 @@
 return {
-  "MonsieurTib/neonuget",
-  config = function()
-    require("neonuget").setup({
-      -- Optional configuration
-      dotnet_path = "dotnet", -- Path to dotnet CLI
-      default_project = nil,  -- Auto-detected, or specify path like "./MyProject/MyProject.csproj"
-    })
-  end,
+  "d7omdev/nuget.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
-  }
+    "nvim-telescope/telescope.nvim",
+  },
+  config = function()
+    require("nuget").setup()
+  end,
 }

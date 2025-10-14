@@ -82,7 +82,11 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.softtabstop = 2
 
-vim.o.shell = "C:\\Program Files\\Git\\bin\\bash.exe"
-vim.o.shellcmdflag = "-c"
-vim.o.shellquote = '"'
-vim.o.shellxquote = ""
+-- vim.o.shell = "C:\\Program Files\\Git\\bin\\bash.exe"
+-- vim.o.shellcmdflag = "-c"
+-- vim.o.shellquote = '"'
+-- vim.o.shellxquote = ""
+vim.opt.shell = "powershell"
+vim.opt.shellcmdflag = "-NoProfile -Command"
+vim.opt.shellquote = ""
+vim.opt.shellxquote = ""

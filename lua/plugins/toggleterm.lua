@@ -5,6 +5,7 @@ return {
     config = function()
       require("toggleterm").setup {
         size = 20,
+        shell = "C:\\Progra~1\\Git\\bin\\bash.exe",
         open_mapping = [[<c-\>]], -- default toggle
         hide_numbers = true,
         shade_filetypes = {},
