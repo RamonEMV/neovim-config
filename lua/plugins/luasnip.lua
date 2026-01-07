@@ -7,7 +7,8 @@ return {
   },
   ---@param opts cmp.ConfigSchema
   opts = function()
-    require("vim-react-snippets").lazy_load()
+    -- require("vim-react-snippets").lazy_load()
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     local luasnip = require("luasnip")
 
